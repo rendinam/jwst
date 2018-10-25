@@ -25,7 +25,7 @@ def PYTEST = "pytest \
               --junit-xml=results.xml"
 
 //def TEST_ROOT = "jwst/tests_nightly/general"
-def TEST_ROOT = "jwst/tests_nightly/general/miri/test_miri_steps_single::TestMIRICube"
+def TEST_ROOT = "jwst/tests_nightly/general/miri/test_miri_steps_single.py::TestMIRICube"
 
 // Configure artifactory ingest
 data_config = new DataConfig()
