@@ -35,8 +35,9 @@ bc.nodetype = 'jwst'
 bc.env_vars = test_env
 bc.name = '3.6'
 bc.conda_channels = ['http://ssb.stsci.edu/astroconda-dev']
-bc.conda_packages = ['asdf',
-                     'astropy',
+bc.conda_packages = ['python=3.6',
+                     'asdf',
+                     'astropy=4.0.0.dev11091+g94e17bc',
                      'crds',
                      'dask',
                      'drizzle',
