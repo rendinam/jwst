@@ -24,7 +24,7 @@ def PYTEST = "pytest \
               --basetemp=${PYTEST_BASETEMP} \
               --junit-xml=results.xml"
 
-def TEST_ROOT = "jwst/tests_nightly/general/miri"
+def TEST_ROOT = "jwst/tests_nightly/general/miri/test_miri_steps_single.py"
 
 // Configure artifactory ingest
 data_config = new DataConfig()
