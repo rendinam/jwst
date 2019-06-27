@@ -55,7 +55,7 @@ bc0.test_configs = [data_config]
 
 
 bc1 = new BuildConfig()
-//bc1.run_on_days = [1,7] // Sat, Sun only
+bc1.run_on_days = [1,7] // Sat, Sun only
 bc1.nodetype = 'jwst'
 bc1.name = 'long-running'
 bc1.env_vars = env_vars
