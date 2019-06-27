@@ -1,4 +1,4 @@
-@Library('utils@homedir') _
+@Library('utils@dow-filter') _
 
 // [skip ci] and [ci skip] have no effect here.
 if (utils.scm_checkout(['skip_disable':true])) return
@@ -31,26 +31,52 @@ data_config.root = '${PYTEST_BASETEMP}'
 data_config.match_prefix = '(.*)_result' // .json is appended automatically
 
 // Build and test with python 3.6 and released dependencies from astroconda
-bc = new BuildConfig()
-bc.nodetype = 'jwst'
-bc.name = 'stable-deps'
-bc.env_vars = env_vars
-bc.conda_ver = '4.6.14'
-bc.conda_packages = [
+bc0 = new BuildConfig()
+bc0.nodetype = 'jwst'
+bc0.name = 'stable-deps'
+bc0.env_vars = env_vars
+bc0.conda_ver = '4.6.14'
+bc0.conda_packages = [
     "python=${python_version}",
 ]
-bc.build_cmds = [
+bc0.build_cmds = [
     "env",
     "conda config --show",
     "pip install -e .[test]",
     "conda env export",
     "pip install pytest-xdist",
 ]
-bc.test_cmds = [
+bc0.test_cmds = [
     "pytest -r sx -v -n 30 --bigdata --slow \
     --basetemp=${pytest_basetemp}  --junit-xml=results.xml \
     jwst/tests_nightly/general"
 ]
-bc.test_configs = [data_config]
+bc0.test_configs = [data_config]
 
-utils.run([jobconfig, bc])
+
+//bc1 = new BuildConfig()
+////bc1.run_on_days = [1,7] // Sat, Sun only
+//bc1.nodetype = 'jwst'
+//bc1.name = 'long-running'
+//bc1.env_vars = env_vars
+//bc1.conda_ver = '4.6.14'
+//bc1.conda_packages = [
+//    "python=${python_version}",
+//]
+//bc1.build_cmds = [
+//    "env",
+//    "conda config --show",
+//    "pip install -e .[test]",
+//    "conda env export",
+//    "pip install pytest-xdist",
+//]
+//bc1.test_cmds = [
+//    "pytest -r sx -v -n 30 --bigdata --slow \
+//    --basetemp=${pytest_basetemp}  --junit-xml=results.xml \
+//    jwst/tests_nightly/general"
+//]
+//bc1.test_configs = [data_config]
+
+
+//utils.run([jobconfig, bc0, bc1])
+utils.run([jobconfig, bc0])
