@@ -1,0 +1,11 @@
+{
+    "asn_type": "None",
+    "asn_rule": "Association",
+    "version_id": null,
+    "code_version": "0.7.7.dev3806+gaf1cd435",
+    "members": [
+        "a",
+        "b",
+        "c"
+    ]
+}

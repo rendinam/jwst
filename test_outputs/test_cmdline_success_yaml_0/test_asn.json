@@ -1,0 +1,19 @@
+asn_id: a3001
+asn_pool: none
+asn_rule: DMS_Level3_Base
+asn_type: None
+code_version: 0.7.7.dev3806+gaf1cd435
+constraints: No constraints
+degraded_status: No known degraded exposures in association.
+products:
+- members:
+  - expname: a
+    exptype: science
+  - expname: b
+    exptype: science
+  - expname: c
+    exptype: science
+  name: test_product
+program: noprogram
+target: none
+version_id: null

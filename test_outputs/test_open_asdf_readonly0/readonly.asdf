@@ -1,0 +1,27 @@
+#ASDF 1.0.0
+#ASDF_STANDARD 1.3.0
+%YAML 1.1
+%TAG ! tag:stsci.edu:asdf/
+--- !core/asdf-1.1.0
+asdf_library: !core/software-1.0.0
+  author: Space Telescope Science Institute
+  homepage: http://github.com/spacetelescope/asdf
+  name: asdf
+  version: 2.3.2
+history:
+  extensions:
+  - !core/extension_metadata-1.0.0
+    extension_class: asdf.extension.BuiltinExtension
+    software:
+      name: asdf
+      version: 2.3.2
+meta:
+  date: '2019-03-12T15:13:03.376'
+  instrument:
+    channel: SHORT
+    detector: NRCA4
+    name: NIRCAM
+  model_type: DistortionModel
+  reftype: distortion
+  telescope: JWST
+...

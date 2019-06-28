@@ -60,7 +60,7 @@ bc1.name = 'testing-config-1'
 
 
 bc2 = utils.copy(bc0)
-bc2.nodetype= = 'pembry'
+bc2.nodetype = 'pembry'
 bc2.name = 'testing-config-2'
 bc2.build_cmds = ['hostname',
                   'pwd']

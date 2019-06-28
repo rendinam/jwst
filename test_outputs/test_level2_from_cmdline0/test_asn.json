@@ -1,0 +1,37 @@
+{
+    "asn_type": "None",
+    "asn_rule": "DMSLevel2bBase",
+    "version_id": null,
+    "code_version": "0.7.7.dev3806+gaf1cd435",
+    "degraded_status": "No known degraded exposures in association.",
+    "program": "noprogram",
+    "products": [
+        {
+            "name": "a",
+            "members": [
+                {
+                    "expname": "a",
+                    "exptype": "science"
+                }
+            ]
+        },
+        {
+            "name": "b",
+            "members": [
+                {
+                    "expname": "b",
+                    "exptype": "science"
+                }
+            ]
+        },
+        {
+            "name": "c",
+            "members": [
+                {
+                    "expname": "c",
+                    "exptype": "science"
+                }
+            ]
+        }
+    ]
+}
