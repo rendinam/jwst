@@ -33,7 +33,7 @@ data_config.match_prefix = '(.*)_result' // .json is appended automatically
 // Build and test with python 3.6 and released dependencies from astroconda
 bc0 = new BuildConfig()
 bc0.nodetype = 'jwst'
-bc0.name = 'stable-deps'
+bc0.name = 'testing-config-0'
 bc0.env_vars = env_vars
 bc0.conda_ver = '4.6.14'
 bc0.conda_packages = [
@@ -54,28 +54,16 @@ bc0.test_cmds = [
 bc0.test_configs = [data_config]
 
 
-bc1 = new BuildConfig()
+bc1 = utils.copy(bc0)
 bc1.run_on_days = ['sat', 'sun']
-bc1.nodetype = 'jwst'
-bc1.name = 'long-running'
-bc1.env_vars = env_vars
-bc1.conda_ver = '4.6.14'
-bc1.conda_packages = [
-    "python=${python_version}",
-]
-bc1.build_cmds = [
-    "env",
-    "conda config --show",
-    "pip install -e .[test]",
-    "conda env export",
-    "pip install pytest-xdist",
-]
-bc1.test_cmds = [
-    "pytest -r sx -v -n 30 --bigdata --slow \
-    --basetemp=${pytest_basetemp}  --junit-xml=results.xml \
-    jwst/tests_nightly/general/fgs/test_fgs_sloper_1.py"
-]
-bc1.test_configs = [data_config]
+bc1.name = 'testing-config-1'
+
+
+bc2 = utils.copy(bc0)
+bc2.nodetype= = 'pembry'
+bc2.name = 'testing-config-2'
+bc2.build_cmds = ['hostname',
+                  'pwd']
 
 
 utils.run([jobconfig, bc0, bc1])
