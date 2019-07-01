@@ -66,4 +66,4 @@ bc2.build_cmds = ['hostname',
                   'pwd']
 
 
-utils.run([jobconfig, bc0, bc1])
+utils.run([jobconfig, bc0, bc1, bc2])
