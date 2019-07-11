@@ -4,6 +4,24 @@
 - Remove references to deprecated collections.* ABCs that will be removed in
   Python 3.8. [#3732]
 
+- Remove ``jwpsf`` module. [#3791]
+
+assign_wcs
+----------
+
+- This step populates keyword DISPAXIS. [#3799]
+
+associations
+------------
+
+- Return filename with extensions based on file type [#2671]
+
+- Ensured that all target acqs are processed by Level 2 [#3765]
+
+- Add a check that backgrounds are included in level 3 associations [#3678]
+
+- Will not constrain on uniqueness of the MSACONFIG keyword [#3770]
+
 datamodels
 ----------
 
@@ -11,19 +29,63 @@ datamodels
 
 - Fixed corruption of FITS tables with unsigned int columns. [#3736]
 
+- Fixed missing TUNITn keywords caused by changes for unsigned int columns. [#3753]
+
+- Write ``siaf_xref_sci`` and ``siaf_yref_sci`` to FITS keywords ``XREF_SCI``
+  and ``YREF_SCI`` for ``NRC_TSGRISM`` exposures. [#3766]
+
+exp_to_source
+-------------
+
+- Updated the documentation and added some logging to the step. [#3803]
+
+extract_1d
+----------
+
+- Parameters were added to ``ExtractBase.__init__``, and most of the initialization
+  is done there rather than in the subclasses. [#3714]
+
+- This step uses keyword DISPAXIS. [#3799]
+
+extract_2d
+----------
+
+For grism data, this step copies keyword DISPAXIS from input to output. [#3799]
+
+flat_field
+----------
+
+- This step uses keyword DISPAXIS. [#3799]
+
+gain_scale
+----------
+
+- Updated to apply gain factor to variance arrays. [#3794]
+
 group_scale
 -----------
 
 - Updates to documentation and log messages. [#3738]
 
-0.13.8 (Unreleased)
-===================
+lib
+---
 
-extract_1d
-----------
+- A function to determine the dispersion direction has been added. [#3756]
 
-- Parameters were added to ExtractBase.__init__, and most of the initialization
-  is done there rather than in the subclasses. [#3714]
+master_background
+-----------------
+
+- Updated the documentation to include more details. [#3776]
+
+resample_spec
+-------------
+
+- This step uses keyword DISPAXIS and also copies it to output. [#3799]
+
+stpipe
+------
+
+- Fix ``Step.print_configspec()`` method.  Add test.  [#3768]
 
 0.13.7 (2019-06-21)
 ===================
