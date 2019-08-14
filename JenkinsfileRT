@@ -46,7 +46,7 @@ bc0.test_cmds = [
     "pytest -r sx -v -n 30 --bigdata --slow \
     --basetemp=${pytest_basetemp}  --junit-xml=results.xml \
     --log-level=INFO \
-    jwst/tests_nightly/general/miri/test_miri_steps_single.py"
+    jwst/tests_nightly/general/miri/test_miri_steps_single.py::test_ramp_fit_miri1"
 ]
 bc0.test_configs = [data_config]
 
