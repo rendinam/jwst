@@ -48,11 +48,11 @@ bc0.build_cmds = [
     "pip install -r requirements-sdp.txt -e .[ephem]",
     "pip install pytest-xdist",
 ]
-bc0.test_cmds = [
-    "pytest --cov=./ -r sxf -n 30 --bigdata --slow \
-    --basetemp=${pytest_basetemp}  --junit-xml=results.xml jwst",
-    "codecov --token=${codecov_token}"
-]
+bc0.test_cmds = []
+//    "pytest --cov=./ -r sxf -n 30 --bigdata --slow \
+//    --basetemp=${pytest_basetemp}  --junit-xml=results.xml jwst",
+//    "codecov --token=${codecov_token}"
+//]
 bc0.test_configs = [data_config]
 
 
@@ -66,5 +66,6 @@ bc1.build_cmds = ["pip install -r requirements-sdp.txt -e ."]
 bc1.test_cmds = []
 bc1.test_configs = []
 
-utils.run([jobconfig, bc0, bc1])
+//utils.run([jobconfig, bc0, bc1])
+utils.run([jobconfig, bc0])
 }  // withCredentials
