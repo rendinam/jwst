@@ -49,7 +49,7 @@ bc0.build_cmds = [
     "pip install pytest-xdist",
 ]
 bc0.test_cmds = [
-    "pytest --cov=./ -r sxf -n 30 --bigdata --slow \
+    "pytest -r sxf -n 30 --bigdata --slow \
     --basetemp=${pytest_basetemp}  --junit-xml=results.xml jwst/tests_nightly/general/fgs/test_fgs_image2_1.py",
 //    "codecov --token=${codecov_token}"
 ]
