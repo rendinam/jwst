@@ -48,10 +48,14 @@ bc0.build_cmds = [
     "pip install -e .[test,ephem]",
     "pip install pytest-xdist",
 ]
+////bc0.test_cmds = [
+////    "pytest --cov-report=xml --cov -r sxf -n 30 --bigdata --slow \
+////    --basetemp=${pytest_basetemp} --junit-xml=results.xml --dist=loadscope",
+////    "codecov --token=${codecov_token} -F nightly"
+////]
 bc0.test_cmds = [
-    "pytest --cov-report=xml --cov -r sxf -n 30 --bigdata --slow \
+    "pytest --cov-report=xml -r sxf -n 30 \
     --basetemp=${pytest_basetemp} --junit-xml=results.xml --dist=loadscope",
-    "codecov --token=${codecov_token} -F nightly"
 ]
 bc0.test_configs = [data_config]
 
@@ -65,5 +69,6 @@ bc1.build_cmds = ["pip install -e ."]
 bc1.test_cmds = []
 bc1.test_configs = []
 
-utils.run([jobconfig, bc0, bc1])
+////utils.run([jobconfig, bc0, bc1])
+utils.run([jobconfig, bc0])
 }  // withCredentials
